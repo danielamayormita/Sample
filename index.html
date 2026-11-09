@@ -2,256 +2,939 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniela | My Little Space ♡</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniela Mayormita | Portfolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+:root {
+  --pink: #e99ab8;
+  --dark-pink: #b96385;
+  --light-pink: #fff0f5;
+  --soft-pink: #fbe0e9;
+  --text: #684b58;
+  --muted: #a48996;
+  --white: #fffafd;
+}
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 25px;
-      font-family: 'DM Sans', sans-serif;
-      color: #694b58;
-      background: linear-gradient(135deg, #fff7fa, #fce4ed, #fff0f5);
-      overflow-x: hidden;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    .sparkle {
-      position: fixed;
-      color: #d98eaa;
-      font-size: 25px;
-      animation: float 4s ease-in-out infinite;
-    }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #fff8fb;
+  color: var(--text);
+}
 
-    .one { top: 12%; left: 12%; }
-    .two { top: 20%; right: 15%; animation-delay: 1s; }
-    .three { bottom: 15%; left: 17%; animation-delay: 2s; }
-    .four { bottom: 20%; right: 12%; animation-delay: 1.5s; }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    @keyframes float {
-      50% { transform: translateY(-12px) rotate(15deg); }
-    }
+button {
+  font-family: inherit;
+}
 
-    .profile {
-      width: 100%;
-      max-width: 650px;
-      padding: 15px;
-      border-radius: 30px;
-      background: rgba(255,255,255,0.55);
-      box-shadow: 0 20px 60px rgba(180, 105, 139, 0.15);
-      animation: appear 1s ease;
-    }
+/* BACKGROUND */
 
-    @keyframes appear {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+body::before {
+  content: "✿";
+  position: fixed;
+  top: 100px;
+  right: 5%;
+  font-size: 100px;
+  color: #f8dce7;
+  opacity: .35;
+  z-index: -1;
+}
 
-    .card {
-      overflow: hidden;
-      border-radius: 22px;
-      background: #fffafd;
-      border: 1px solid #f4dce6;
-    }
+body::after {
+  content: "♡";
+  position: fixed;
+  bottom: 40px;
+  left: 4%;
+  font-size: 100px;
+  color: #f3c9d9;
+  opacity: .3;
+  z-index: -1;
+}
 
-    .cover {
-      height: 170px;
-      background: linear-gradient(120deg, #f4bfd2, #f9dce7, #efb5cb);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 65px;
-      color: rgba(255,255,255,0.8);
-    }
+/* NAVIGATION */
 
-    .avatar {
-      width: 110px;
-      height: 110px;
-      margin: -55px auto 0;
-      border: 6px solid #fffafd;
-      border-radius: 50%;
-      background: #f9dce7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #a95779;
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      box-shadow: 0 5px 20px rgba(169,87,121,0.15);
-    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,250,253,.92);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid #f5dce6;
+}
 
-    .content {
-      padding: 20px 30px 30px;
-      text-align: center;
-    }
+.navbar {
+  max-width: 1150px;
+  margin: auto;
+  padding: 17px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
 
-    .eyebrow {
-      color: #a95779;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: var(--dark-pink);
+  font-size: 23px;
+  font-weight: 700;
+}
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(30px, 7vw, 44px);
-      color: #75485b;
-      margin-bottom: 10px;
-    }
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  flex-wrap: wrap;
+}
 
-    .subtitle {
-      color: #a88b98;
-      font-size: 14px;
-      margin-bottom: 25px;
-    }
+.nav-links button {
+  border: none;
+  background: transparent;
+  padding: 10px 14px;
+  border-radius: 20px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 13px;
+  transition: .3s;
+}
 
-    .divider {
-      width: 50px;
-      height: 2px;
-      background: #e8abc2;
-      margin: 0 auto 25px;
-    }
+.nav-links button:hover,
+.nav-links button.active {
+  background: var(--soft-pink);
+  color: var(--dark-pink);
+}
 
-    .details {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 13px;
-      text-align: left;
-    }
+/* GENERAL */
 
-    .detail {
-      padding: 20px 17px;
-      border-radius: 17px;
-      background: #fff4f8;
-      border: 1px solid #f4e1e9;
-      transition: 0.3s;
-    }
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 75px 25px;
+}
 
-    .detail:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(172,102,132,0.12);
-    }
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-    .label {
-      display: block;
-      color: #b17c91;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
+.section-title small {
+  color: var(--dark-pink);
+  letter-spacing: 4px;
+  font-weight: 700;
+  font-size: 11px;
+}
 
-    .value {
-      font-size: 16px;
-      font-weight: 600;
-      color: #694b58;
-    }
+.section-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  margin: 10px 0;
+  color: #75485b;
+}
 
-    .quote {
-      margin-top: 25px;
-      padding: 17px;
-      border-radius: 15px;
-      background: #fff0f5;
-      color: #98677d;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 16px;
-    }
+.section-title p {
+  color: var(--muted);
+  font-size: 14px;
+}
 
-    footer {
-      margin-top: 22px;
-      font-size: 10px;
-      letter-spacing: 2px;
-      color: #b38b9b;
-    }
+/* TAB CONTENT */
 
-    @media (max-width: 480px) {
-      body { padding: 15px; }
-      .content { padding: 20px 16px 25px; }
-      .details { gap: 9px; }
-      .detail { padding: 15px 11px; }
-      .value { font-size: 14px; }
-    }
-  </style>
+.tab-content {
+  display: none;
+  min-height: 75vh;
+  animation: fade .5s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* HOME */
+
+.hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text .tag {
+  display: inline-block;
+  background: var(--soft-pink);
+  color: var(--dark-pink);
+  padding: 9px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  margin-bottom: 22px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 65px);
+  line-height: 1.15;
+  color: #75485b;
+}
+
+.hero-text h1 span {
+  color: var(--pink);
+}
+
+.hero-text p {
+  color: var(--muted);
+  line-height: 1.9;
+  margin: 20px 0 28px;
+  max-width: 500px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  background: var(--pink);
+  color: white;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: var(--dark-pink);
+  transform: translateY(-3px);
+}
+
+.hero-image {
+  flex: 0 0 330px;
+  height: 380px;
+  border-radius: 160px 160px 30px 30px;
+  background: #f7d5e2;
+  border: 9px solid white;
+  box-shadow: 0 15px 40px rgba(180,100,135,.15);
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.about-photo {
+  height: 390px;
+  border-radius: 25px;
+  overflow: hidden;
+  background: var(--soft-pink);
+  border: 8px solid white;
+  box-shadow: 0 10px 35px rgba(180,100,135,.12);
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.about-info p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.info-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.info-item {
+  padding: 14px;
+  border-radius: 13px;
+  background: var(--light-pink);
+  font-size: 13px;
+}
+
+.info-item strong {
+  display: block;
+  color: var(--dark-pink);
+  margin-bottom: 5px;
+}
+
+/* SKILLS */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  background: white;
+  padding: 25px;
+  border: 1px solid #f4dce6;
+  border-radius: 20px;
+  box-shadow: 0 7px 20px rgba(180,100,135,.06);
+}
+
+.skill-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  color: var(--dark-pink);
+  margin-bottom: 20px;
+}
+
+.skill {
+  margin-bottom: 17px;
+}
+
+.skill-name {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.progress {
+  height: 9px;
+  background: #fbe8ef;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #efb5cb, #cf7e9e);
+  border-radius: 20px;
+}
+
+/* PROJECTS */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 23px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #f4dce6;
+  transition: .3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(180,100,135,.12);
+}
+
+.project-image {
+  height: 210px;
+  background: var(--soft-pink);
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .4s;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 22px;
+}
+
+.project-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  margin-bottom: 9px;
+}
+
+.project-info p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.project-tag {
+  display: inline-block;
+  background: var(--light-pink);
+  color: var(--dark-pink);
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  margin: 3px 3px 3px 0;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 13px;
+  font-size: 13px;
+  color: var(--dark-pink);
+  font-weight: 700;
+}
+
+/* CERTIFICATES */
+
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 23px;
+}
+
+.certificate-card {
+  padding: 13px;
+  border-radius: 18px;
+  background: white;
+  border: 1px solid #f4dce6;
+  transition: .3s;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+}
+
+.certificate-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #fff4f8;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.certificate-card h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 14px 5px 5px;
+  font-size: 19px;
+}
+
+.certificate-card p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0 5px 8px;
+}
+
+/* CONTACT */
+
+.contact-box {
+  max-width: 650px;
+  margin: auto;
+  padding: 35px;
+  background: white;
+  border: 1px solid #f4dce6;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.contact-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  margin-bottom: 12px;
+}
+
+.contact-box p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.contact-links a {
+  background: var(--light-pink);
+  color: var(--dark-pink);
+  padding: 12px 18px;
+  border-radius: 25px;
+  font-size: 13px;
+  transition: .3s;
+}
+
+.contact-links a:hover {
+  background: var(--pink);
+  color: white;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #fff0f5;
+  color: #a77b8e;
+  font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .nav-links button {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 35px;
+  }
+
+  .hero-image {
+    flex: none;
+    width: 250px;
+    height: 290px;
+  }
+
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    height: 300px;
+  }
+
+  .skills-grid,
+  .projects-grid,
+  .certificate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title h2 {
+    font-size: 31px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <span class="sparkle one">✧</span>
-  <span class="sparkle two">♡</span>
-  <span class="sparkle three">✦</span>
-  <span class="sparkle four">✧</span>
+<header>
+  <nav class="navbar">
+    <a href="#" class="logo">Daniela ♡</a>
 
-  <main class="profile">
-    <div class="card">
+    <ul class="nav-links">
+      <li><button class="active" onclick="showTab('home', this)">Home</button></li>
+      <li><button onclick="showTab('about', this)">About</button></li>
+      <li><button onclick="showTab('skills', this)">Skills</button></li>
+      <li><button onclick="showTab('projects', this)">Projects</button></li>
+      <li><button onclick="showTab('certificates', this)">Certificates</button></li>
+      <li><button onclick="showTab('contact', this)">Contact</button></li>
+    </ul>
+  </nav>
+</header>
 
-      <div class="cover">♡ ✿ ♡</div>
+<!-- HOME TAB -->
+<section id="home" class="tab-content active">
+  <div class="container hero">
 
-      <div class="avatar">D♡</div>
+    <div class="hero-text">
+      <span class="tag">♡ Welcome to my portfolio ♡</span>
 
-      <div class="content">
+      <h1>Hello, I'm<br><span>Daniela Mayormita</span></h1>
 
-        <p class="eyebrow">A Little Introduction</p>
+      <p>
+        An aspiring IT professional who loves learning,
+        exploring technology, and creating meaningful
+        digital experiences. Welcome to my personal portfolio!
+      </p>
 
-        <h1>Daniela Mayormita</h1>
+      <button class="btn" onclick="showTab('about')">
+        Get to know me ♡
+      </button>
+    </div>
 
-        <p class="subtitle">
-          Welcome to my little space ♡
+    <div class="hero-image">
+      <!-- CHANGE THIS TO YOUR PHOTO -->
+      <img src="images/profile.jpg" alt="Daniela's Profile Photo">
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT TAB -->
+<section id="about" class="tab-content">
+  <div class="container">
+
+    <div class="section-title">
+      <small>GET TO KNOW ME</small>
+      <h2>About Me ♡</h2>
+      <p>A little story about who I am.</p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-photo">
+        <!-- CHANGE THIS TO YOUR ABOUT PHOTO -->
+        <img src="images/about.jpg" alt="About me photo">
+      </div>
+
+      <div class="about-info">
+        <h3>Hi there! I'm Daniela.</h3>
+
+        <p>
+          I am a student who is passionate about technology,
+          creativity, and continuous learning. I enjoy
+          discovering new things, improving my skills,
+          and challenging myself through different projects.
         </p>
 
-        <div class="divider"></div>
+        <p>
+          My goal is to continue growing as an IT professional
+          and use my knowledge to create useful and innovative
+          solutions.
+        </p>
 
-        <div class="details">
+        <div class="info-list">
 
-          <div class="detail">
-            <span class="label">Age</span>
-            <span class="value">22</span>
+          <div class="info-item">
+            <strong>Name</strong>
+            Daniela Mayormita
           </div>
 
-          <div class="detail">
-            <span class="label">Gender</span>
-            <span class="value">Female</span>
+          <div class="info-item">
+            <strong>Age</strong>
+            22
           </div>
 
-          <div class="detail">
-            <span class="label">Grade / Year Level</span>
-            <span class="value">BSIT 4B</span>
+          <div class="info-item">
+            <strong>Gender</strong>
+            Female
           </div>
 
-          <div class="detail">
-            <span class="label">School Year</span>
-            <span class="value">2026 – 2027</span>
+          <div class="info-item">
+            <strong>Course / Year</strong>
+            BSIT 4B
+          </div>
+
+          <div class="info-item">
+            <strong>School</strong>
+            La Consolacion University Philippines
+          </div>
+
+          <div class="info-item">
+            <strong>Location</strong>
+            Philippines
           </div>
 
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="quote">
-          "Growing at my own pace, blooming in my own way." ♡
+<!-- SKILLS TAB -->
+<section id="skills" class="tab-content">
+  <div class="container">
+
+    <div class="section-title">
+      <small>WHAT I CAN DO</small>
+      <h2>My Skills ✨</h2>
+      <p>Things I've learned and continue to improve.</p>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3>♡ Technical Skills</h3>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>HTML</span><span>80%</span>
+          </div>
+          <div class="progress"><span style="width:80%"></span></div>
         </div>
 
-        <footer>
-          MADE WITH LOVE & A LITTLE PINK ✿
-        </footer>
+        <div class="skill">
+          <div class="skill-name">
+            <span>CSS</span><span>75%</span>
+          </div>
+          <div class="progress"><span style="width:75%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>JavaScript</span><span>60%</span>
+          </div>
+          <div class="progress"><span style="width:60%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Python</span><span>55%</span>
+          </div>
+          <div class="progress"><span style="width:55%"></span></div>
+        </div>
+
+      </div>
+
+      <div class="skill-card">
+        <h3>♡ Other Skills</h3>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Communication</span><span>85%</span>
+          </div>
+          <div class="progress"><span style="width:85%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Teamwork</span><span>90%</span>
+          </div>
+          <div class="progress"><span style="width:90%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Creativity</span><span>85%</span>
+          </div>
+          <div class="progress"><span style="width:85%"></span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-name">
+            <span>Problem Solving</span><span>75%</span>
+          </div>
+          <div class="progress"><span style="width:75%"></span></div>
+        </div>
 
       </div>
     </div>
-  </main>
+  </div>
+</section>
+
+<!-- PROJECTS TAB -->
+<section id="projects" class="tab-content">
+  <div class="container">
+
+    <div class="section-title">
+      <small>MY WORK</small>
+      <h2>My Projects 💻</h2>
+      <p>Some of the projects I've worked on.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-image">
+          <!-- REPLACE WITH YOUR PROJECT SCREENSHOT -->
+          <img src="images/project1.jpg" alt="SmartEvent project">
+        </div>
+        <div class="project-info">
+          <h3>SMARTEVENT</h3>
+          <p>
+            A mobile-based inventory, financial management,
+            event monitoring, and data analytics reporting
+            system for student organizations.
+          </p>
+          <span class="project-tag">Flutter</span>
+          <span class="project-tag">Supabase</span>
+          <span class="project-tag">Dart</span>
+          <br>
+          <a href="#" class="project-link">View Project ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <!-- REPLACE WITH YOUR PROJECT SCREENSHOT -->
+          <img src="images/project2.jpg" alt="Barcie Cafe project">
+        </div>
+        <div class="project-info">
+          <h3>Barcie Cafe</h3>
+          <p>
+            A cafe management website with product management,
+            inventory, ordering, sales reports, and an admin dashboard.
+          </p>
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">MySQL</span>
+          <span class="project-tag">CSS</span>
+          <br>
+          <a href="#" class="project-link">View Project ↗</a>
+        </div>
+      </div>
+
+     
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES TAB -->
+<section id="certificates" class="tab-content">
+  <div class="container">
+
+    <div class="section-title">
+      <small>MY ACHIEVEMENTS</small>
+      <h2>Certificates 🏆</h2>
+      <p>My learning journey and accomplishments.</p>
+    </div>
+
+    <div class="certificate-grid">
+
+      <div class="certificate-card">
+        <!-- REPLACE WITH YOUR CERTIFICATE IMAGE -->
+        <a href="images/certificate1.jpg" target="_blank">
+          <img src="images/certificate1.jpg" alt="Certificate one">
+        </a>
+        <h3>Certificate Title</h3>
+        <p>Issuing organization • Year</p>
+      </div>
+
+      <div class="certificate-card">
+        <a href="images/certificate2.jpg" target="_blank">
+          <img src="images/certificate2.jpg" alt="Certificate two">
+        </a>
+        <h3>Certificate Title</h3>
+        <p>Issuing organization • Year</p>
+      </div>
+
+      <div class="certificate-card">
+        <a href="images/certificate3.jpg" target="_blank">
+          <img src="images/certificate3.jpg" alt="Certificate three">
+        </a>
+        <h3>Certificate Title</h3>
+        <p>Issuing organization • Year</p>
+      </div>
+
+      <div class="certificate-card">
+        <a href="images/certificate4.jpg" target="_blank">
+          <img src="images/certificate4.jpg" alt="Certificate four">
+        </a>
+        <h3>Certificate Title</h3>
+        <p>Issuing organization • Year</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT TAB -->
+<section id="contact" class="tab-content">
+  <div class="container">
+
+    <div class="section-title">
+      <small>LET'S CONNECT</small>
+      <h2>Contact Me ♡</h2>
+      <p>Feel free to reach out!</p>
+    </div>
+
+    <div class="contact-box">
+      <h3>Thank you for visiting! 🌷</h3>
+
+      <p>
+        I would love to connect, collaborate, and learn
+        with other people. You can find me through
+        the links below.
+      </p>
+
+      <div class="contact-links">
+        <!-- REPLACE # WITH YOUR ACTUAL LINKS -->
+        <a href="danielamayormita013@gmail.com">✉ Email</a>
+        <a href="https://www.facebook.com/mayormita.daniela" target="_blank">Facebook ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Daniela Mayormita | Made with ♡ and a little pink.</p>
+</footer>
+
+<script>
+function showTab(tabId, button) {
+  // Hide all sections
+  document.querySelectorAll('.tab-content').forEach(section => {
+    section.classList.remove('active');
+  });
+
+  // Remove active navigation style
+  document.querySelectorAll('.nav-links button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // Show selected section
+  document.getElementById(tabId).classList.add('active');
+
+  // Highlight selected navigation button
+  if (button) {
+    button.classList.add('active');
+  } else {
+    const selected = [...document.querySelectorAll('.nav-links button')]
+      .find(btn => btn.getAttribute('onclick').includes("'" + tabId + "'"));
+    if (selected) selected.classList.add('active');
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
